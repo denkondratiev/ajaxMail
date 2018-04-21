@@ -8,11 +8,12 @@ $(document).ready(function() {
 			url: "mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
-			alert("Thank you!");
+			$(th).find('.success').addClass('active').css('display', 'block').hide().fadeIn(); //Change alert
 			setTimeout(function() {
 				// Done Functions
+				$(th).find('.success').removeClass('active').fadeOut();
 				th.trigger("reset");
-			}, 1000);
+			}, 3000);
 		});
 		return false;
 	});
